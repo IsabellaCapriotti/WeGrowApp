@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeGrow.Pages.UpdateWeight"
+             NavigationPage.HasBackButton="True">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="#9ED2B0" Padding="0, 50, 0, 0">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Current Weight: " FontSize="30"/>
+                <Label x:Name="currentWeight" Text="120 lbs" FontSize="30"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="decreaseWeightButton" Text="-" FontSize="45" TextColor="White" BackgroundColor="Transparent" Clicked="decreaseWeightButton_Clicked"/>
+                <Button x:Name="increaseWeightButton" Text="+" FontSize="45" TextColor="White" BackgroundColor="Transparent" Clicked="increaseWeightButton_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Margin="10" HorizontalOptions="Center">
+                <Button x:Name="confirmButton" Text="Confirm" TextColor="White" BackgroundColor="#795547" Clicked="confirmButton_Clicked"/>
+            </StackLayout>
+            
+            <Image x:Name="plantImage" VerticalOptions="FillAndExpand" HorizontalOptions="Center" Source="starter_cactus"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

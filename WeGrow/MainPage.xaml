@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeGrow.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout BackgroundColor="#9ED2B0" Padding="0, 40, 0, 0">
+        
+        <!-- Username selection -->
+        <StackLayout x:Name="userNameSelection" VerticalOptions="FillAndExpand" Orientation="Vertical">
+            <!-- Prompt -->
+            <Label x:Name="namePrompt" HorizontalOptions="Center" Text="What should I call you?" FontSize="30" TextColor="#2c610e"/>
+            
+            <!-- Name Entry -->
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Orientation="Horizontal" Spacing="20">
+                <Entry x:Name="userNameEntry" WidthRequest="300" Placeholder="Enter name..."/>
+            </StackLayout>
+
+            <!-- Empty Name Error -->
+            <Label x:Name="emptyNameErrorText" IsVisible="false" HorizontalOptions="Center" FontSize="18" Margin="0,20" Text="Error; please enter a name before proceeding."/>
+
+            <!-- Proceed Button  -->
+            <StackLayout VerticalOptions="End">
+                <Button x:Name="nameSelectProceedButton" Text="Okay!" TextColor="White" BackgroundColor="#795547" Clicked="nameSelectProceedButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+        
+        
+        <!-- Starter plant selection -->
+        <StackLayout x:Name="starterPlantSelection" IsVisible="false" Opacity="0" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+            <!-- Prompt -->
+            <Label x:Name="starterPlantPrompt" Margin="20, 0 " HorizontalOptions="Center" Text="Great! Now, pick a friend to grow with..." FontSize="30" TextColor="#2c610e"/>
+
+            <!-- Starter Plant Selection -->
+            <Image x:Name="starterPlantImage" Source="starter_cactus.png"/>
+
+            <!-- Cycle through plant option buttons -->
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Orientation="Horizontal" Spacing="20">
+                <StackLayout x:Name="cycleButtonContainer" Orientation="Horizontal">
+                    <Button x:Name="cycleStarterPlantLeftButton" Text="&lt;-" TextColor="White" BackgroundColor="Transparent" FontSize="30" Clicked="cycleStarterPlantLeftButton_Clicked"/>
+                    <Button x:Name="cycleStarterPlantRightButton" Text="-&gt;" TextColor="White" BackgroundColor="Transparent" FontSize="30" Clicked="cycleStarterPlantRightButton_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Proceed Button  -->
+            <StackLayout VerticalOptions="End">
+                <Button x:Name="starterPlantSelectProceedButton" Text="Okay!" TextColor="White" BackgroundColor="#795547" Clicked="starterPlantSelectProceedButton_Clicked"/>
+            </StackLayout>
+            
+        </StackLayout>
+
+
+
+       
+    </StackLayout>
+    
+    
+
+</ContentPage>

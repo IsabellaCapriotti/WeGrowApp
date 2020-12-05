@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeGrow.Pages.CalorieLog">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#9ED2B0" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Text="Breakfast: " TextColor="White" VerticalOptions="Start" FontSize="20" Grid.Row="0" Grid.Column="0"/>
+            <Entry x:Name="breakfastEntry" WidthRequest="150" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Grid.Row="0" Grid.Column="1" TextChanged="Entry_TextChanged"/>
+
+            <Label Text="Lunch: " TextColor="White" VerticalOptions="Start" FontSize="20" Grid.Row="1" Grid.Column="0"/>
+            <Entry x:Name="lunchEntry" WidthRequest="150" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1" TextChanged="Entry_TextChanged"/>
+
+            <Label Text="Dinner: " TextColor="White" VerticalOptions="Start" FontSize="20" Grid.Row="2" Grid.Column="0"/>
+            <Entry x:Name="dinnerEntry" WidthRequest="150" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="1" TextChanged="Entry_TextChanged"/>
+
+            <Label Text="Other: " TextColor="White" VerticalOptions="Start" FontSize="20" Grid.Row="3" Grid.Column="0"/>
+            <Entry x:Name="otherEntry" WidthRequest="150" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Grid.Row="3" Grid.Column="1" TextChanged="Entry_TextChanged"/>
+
+            <Label Text="Total: " TextColor="White" VerticalOptions="Start" FontSize="20" Grid.Row="4" Grid.Column="0"/>
+            <Label x:Name="totalLabel" WidthRequest="150" VerticalOptions="Start" HorizontalOptions="StartAndExpand" FontSize="20" Grid.Row="4" Grid.Column="1"/>
+            
+            <Editor x:Name="notes" Placeholder="Enter any notes here..." Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+            <Button x:Name="submitButton" BackgroundColor="#795547" TextColor="White" Text="Save" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Clicked="submitButton_Clicked"/>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

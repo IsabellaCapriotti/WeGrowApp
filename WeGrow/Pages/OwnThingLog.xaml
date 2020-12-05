@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeGrow.Pages.OwnThingLog">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#9ED2B0" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Meal labels-->
+            <Label Text="Breakfast:" TextColor="#2c610e" Grid.Row="0" Grid.Column="0" FontSize="18"/>
+            <Label Text="Lunch:" TextColor="#2c610e" Grid.Row="1" Grid.Column="0" FontSize="18"/>
+            <Label Text="Dinner:" TextColor="#2c610e" Grid.Row="2" Grid.Column="0" FontSize="18"/>
+            <Label Text="Other:" TextColor="#2c610e" Grid.Row="3" Grid.Column="0" FontSize="18"/>
+        
+            <!-- Note sections -->
+            <Editor x:Name="breakfastNotes" Placeholder="Enter notes..." Grid.Row="0" Grid.Column="1"/>
+            <Editor x:Name="lunchNotes" Placeholder="Enter notes..." Grid.Row="1" Grid.Column="1"/>
+            <Editor x:Name="dinnerNotes" Placeholder="Enter notes..." Grid.Row="2" Grid.Column="1"/>
+            <Editor x:Name="otherNotes" Placeholder="Enter notes..." Grid.Row="3" Grid.Column="1"/>
+            
+            <!-- How was today -->
+            <StackLayout Orientation="Vertical" Margin="0, 20, 0, 0" Grid.Row="4" Grid.ColumnSpan="2">
+                <Label Text="Overall, how was your day today?" FontSize="20" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+                        <RadioButton x:Name="goodDay" GroupName="DaySelection"/>
+                        <Label Text="Good" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <RadioButton x:Name="avgDay" GroupName="DaySelection"/>
+                        <Label Text="Average" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <RadioButton x:Name="badDay" GroupName="DaySelection"/>
+                        <Label Text="Not great" VerticalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <Button x:Name="submitButton" BackgroundColor="#795547" TextColor="White" Text="Save" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" Margin="40, 0" Clicked="submitButton_Clicked"/>
+
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

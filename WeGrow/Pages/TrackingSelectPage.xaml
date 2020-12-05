@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeGrow.TrackingSelectPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="#9ED2B0" Padding="0, 20, 0, 0" Spacing="50">
+            
+            <!-- Current Weight / Goal Weight Entry -->
+            <StackLayout VerticalOptions="Start">
+                <StackLayout Padding="10, 0, 0, 0">
+                    <Label HorizontalOptions="Center" Text="Let's learn some more about you." FontSize="25" TextColor="#2c610e"/>
+                </StackLayout>
+                
+                <!-- Weight Entries -->
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Margin="20, 20, 20, 0" Spacing="20">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Current Weight" FontSize="20" VerticalOptions="Center"/>
+                        <Entry x:Name="currentWeight" WidthRequest="100" VerticalOptions="Center" MaxLength="3"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Goal Weight" FontSize="20" VerticalOptions="Center"/>
+                        <Entry x:Name="goalWeight" WidthRequest="100" VerticalOptions="Center" MaxLength="3"/>
+                    </StackLayout>
+                    
+                    <!-- Lbs/Kilos Switch -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="lbs" FontSize="15"/>
+                        <Switch x:Name="measurementSwitch" IsToggled="False" OnColor="#2c610e" ThumbColor="Wheat" Toggled="measurementSwitch_Toggled"/>
+                        <Label Text="kg" FontSize="15"/>
+                    </StackLayout>
+                    
+                    <!-- Error message -->
+                    <Label x:Name="errorLoseWeight" IsVisible="false" Text="Please enter a goal weight higher than your current weight." />
+                    <Label x:Name="errorBlankWeight" IsVisible="false" Text="Please do not leave either weight field blank."/>
+                    <Label x:Name="errorNonNumericWeight" IsVisible="false" Text="Numbers only, please!"/>
+                    <Label x:Name="errorWeightOutOfRange" IsVisible="false" Text="This weight is currently not supported."/>
+
+                </StackLayout>
+            </StackLayout>
+            
+            
+            <!-- Tracking Method Selection -->
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout Padding="10, 0, 0, 0">
+                    <Label HorizontalOptions="Center" Text="What's the best way for you to reach your goals?" FontSize="25" TextColor="#2c610e"/>
+                </StackLayout>
+
+                <!-- Radio Buttons -->
+                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Margin="40, 0">
+                    
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Image x:Name="wateringCanImage" Source="watering_can_1" VerticalOptions="Center"/>
+                        <RadioButton x:Name="countCalories" GroupName="TrackingMethods" VerticalOptions="Center" CheckedChanged="countCalories_CheckedChanged"/>
+                        <Label VerticalOptions="Center" Text="I count calories" FontSize="20"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Image x:Name="fertilizerImage" Source="fertilizer_1" VerticalOptions="Center"/>
+                        <RadioButton x:Name="foodGroups" GroupName="TrackingMethods" CheckedChanged="foodGroups_CheckedChanged"/>
+                        <Label Text="I keep track of food groups" VerticalOptions="Center" FontSize="20"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Image x:Name="beeImage" Source="bee_1" VerticalOptions="Center"/>
+                        <RadioButton x:Name="ownThing" GroupName="TrackingMethods" IsChecked="true" CheckedChanged="ownThing_CheckedChanged"/>
+                        <Label Text="I do my own thing" VerticalOptions="Center" FontSize="20"/>
+                    </StackLayout>
+                </StackLayout>
+                
+                <!-- Proceed Button -->
+                <StackLayout VerticalOptions="End">
+                    <Button x:Name="trackingSelectProceedButton" Text="Okay!" TextColor="White" BackgroundColor="#795547" Clicked="trackingSelectProceedButton_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

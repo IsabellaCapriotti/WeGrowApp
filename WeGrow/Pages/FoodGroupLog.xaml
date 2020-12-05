@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeGrow.Pages.FoodGroupLog">
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#9ED2B0" Padding="20, 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Food group labels -->
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="0" Margin="0, 15, 0, 0">
+                <Label Text="Veg" TextColor="White" FontSize="15" Grid.Column="1"/>
+                <Label Text="Fruit" TextColor="White" FontSize="15" Grid.Column="2"/>
+                <Label Text="Protein" TextColor="White" FontSize="15" Grid.Column="3"/>
+                <Label Text="Grain" TextColor="White" FontSize="15" Grid.Column="4"/>
+                <Label Text="Other" TextColor="White" FontSize="15" Grid.Column="5"/>
+            </StackLayout>
+            
+            <!-- Meal labels-->
+            <Label Text="Breakfast:" TextColor="#2c610e" Grid.Row="1" FontSize="18"/>
+            <Label Text="Lunch:" TextColor="#2c610e" Grid.Row="2" FontSize="18"/>
+            <Label Text="Dinner:" TextColor="#2c610e" Grid.Row="3" FontSize="18"/>
+            <Label Text="Other:" TextColor="#2c610e" Grid.Row="4" FontSize="18"/>
+            <Label Text="Total:" TextColor="#2c610e" Grid.Row="5" FontSize="18"/>
+
+            <!-- Food group entries -->
+            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="24" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5">
+                <CheckBox x:Name="breakfastVegBox" Color="RosyBrown" Grid.Column="1" CheckedChanged="VegBox_CheckedChanged"/>
+                <CheckBox x:Name="breakfastFruitBox" Color="RosyBrown" Grid.Column="2" CheckedChanged="FruitBox_CheckedChanged"/>
+                <CheckBox x:Name="breakfastProteinBox" Color="RosyBrown" Grid.Column="3" CheckedChanged="ProteinBox_CheckedChanged"/>
+                <CheckBox x:Name="breakfastGrainBox" Color="RosyBrown" Grid.Column="4" CheckedChanged="GrainBox_CheckChanged"/>
+                <CheckBox x:Name="breakfastOtherBox" Color="RosyBrown" Grid.Column="5" CheckedChanged="OtherBox_CheckChanged"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="24" Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5">
+                <CheckBox x:Name="lunchVegBox" Color="RosyBrown" Grid.Column="1" CheckedChanged="VegBox_CheckedChanged"/>
+                <CheckBox x:Name="lunchFruitBox" Color="RosyBrown" Grid.Column="2" CheckedChanged="FruitBox_CheckedChanged"/>
+                <CheckBox x:Name="lunchProteinBox" Color="RosyBrown" Grid.Column="3" CheckedChanged="ProteinBox_CheckedChanged"/>
+                <CheckBox x:Name="lunchGrainBox" Color="RosyBrown" Grid.Column="4" CheckedChanged="GrainBox_CheckChanged"/>
+                <CheckBox x:Name="lunchOtherBox" Color="RosyBrown" Grid.Column="5" CheckedChanged="OtherBox_CheckChanged"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="24" Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5">
+                <CheckBox x:Name="dinnerVegBox" Color="RosyBrown" Grid.Column="1" CheckedChanged="VegBox_CheckedChanged"/>
+                <CheckBox x:Name="dinnerFruitBox" Color="RosyBrown" Grid.Column="2" CheckedChanged="FruitBox_CheckedChanged"/>
+                <CheckBox x:Name="dinnerProteinBox" Color="RosyBrown" Grid.Column="3" CheckedChanged="ProteinBox_CheckedChanged"/>
+                <CheckBox x:Name="dinnerGrainBox" Color="RosyBrown" Grid.Column="4" CheckedChanged="GrainBox_CheckChanged"/>
+                <CheckBox x:Name="dinnerOtherBox" Color="RosyBrown" Grid.Column="5" CheckedChanged="OtherBox_CheckChanged"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="24" Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5">
+                <CheckBox x:Name="otherVegBox" Color="RosyBrown" Grid.Column="1" CheckedChanged="VegBox_CheckedChanged"/>
+                <CheckBox x:Name="otherFruitBox" Color="RosyBrown" Grid.Column="2" CheckedChanged="FruitBox_CheckedChanged"/>
+                <CheckBox x:Name="otherProteinBox" Color="RosyBrown" Grid.Column="3" CheckedChanged="ProteinBox_CheckedChanged"/>
+                <CheckBox x:Name="otherGrainBox" Color="RosyBrown" Grid.Column="4" CheckedChanged="GrainBox_CheckChanged"/>
+                <CheckBox x:Name="otherOtherBox" Color="RosyBrown" Grid.Column="5" CheckedChanged="OtherBox_CheckChanged"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="50" Orientation="Horizontal" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">
+                <Label x:Name="vegTotal" Text="0" FontSize="18" TextColor="SaddleBrown"/>
+                <Label x:Name="fruitTotal" Text="0" FontSize="18" TextColor="SaddleBrown"/>
+                <Label x:Name="proteinTotal" Text="0" FontSize="18" TextColor="SaddleBrown"/>
+                <Label x:Name="grainTotal" Text="0" FontSize="18" TextColor="SaddleBrown"/>
+                <Label x:Name="otherTotal" Text="0" FontSize="18" TextColor="SaddleBrown"/>
+            </StackLayout>
+
+            <Editor x:Name="notes" Placeholder="Enter any notes here..." Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6"/>
+            
+            <!-- Save button -->
+            <Button x:Name="submitButton" BackgroundColor="#795547" TextColor="White" Text="Save" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" HorizontalOptions="Fill" Clicked="submitButton_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

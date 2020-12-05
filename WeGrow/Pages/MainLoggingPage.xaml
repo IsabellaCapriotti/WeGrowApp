@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeGrow.Pages.MainLoggingPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid BackgroundColor="AntiqueWhite">
+            
+            <!-- Grid Configuration --> 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="16*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- Welcome message, current weight, goal weight -->
+            <StackLayout Orientation="Vertical" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Padding="20" Spacing="30">
+                <Label x:Name="welcomeLabel" FontSize="30" Text="Welcome back, name!" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
+
+                <StackLayout Orientation="Vertical" Spacing="15">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Today is:" TextColor="#2c610e" FontSize="20" />
+                        <Label x:Name="date" Text="11/28/2020" FontSize="18"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Current Weight:" TextColor="#2c610e" FontSize="20"/>
+                        <Label x:Name="currentWeight" Text="128 lbs" FontSize="18"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Goal Weight:" TextColor="#2c610e" FontSize="20"/>
+                        <Label x:Name="goalWeight" Text="130 lbs" FontSize="18"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+            
+            <!-- Current plant -->
+            <Image x:Name="plantImage" Source="starter_cactus" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3" HorizontalOptions="Start" VerticalOptions="EndAndExpand"/>
+            
+            <!-- Navigation Buttons -->
+            <StackLayout Orientation="Vertical" Grid.Column="3" Grid.RowSpan="3" Padding="20" Spacing="100" VerticalOptions="Center">
+                <ImageButton x:Name="logsButton" Source="logs_leaf" Scale="1.2" Aspect="AspectFill" BackgroundColor="Transparent" Clicked="logsButton_Clicked"/>
+                <ImageButton x:Name="updateWeightButton" Source="update_weight_leaf" Scale="1.2" Aspect="AspectFill" BackgroundColor="Transparent" Clicked="updateWeightButton_Clicked"/>
+                <ImageButton x:Name="settingsButton" Source="settings_leaf" Scale="1.2" Aspect="AspectFill" BackgroundColor="Transparent" Clicked="settingsButton_Clicked"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
