@@ -47,8 +47,8 @@ namespace WeGrow.Pages
             // Update UI
             welcomeLabel.Text = "Welcome back, " + currentUser.Name;
             plantImage.Source = currentUser.GrowthStage + "_" + currentUser.StarterPlant;
-            currentWeight.Text = "Current weight: " + currentUser.CurrentWeight.ToString() + " " + currentUser.MeasurementUnit;
-            goalWeight.Text = "Goal weight: " + currentUser.GoalWeight.ToString() + " " + currentUser.MeasurementUnit;
+            currentWeight.Text = currentUser.CurrentWeight.ToString() + " " + currentUser.MeasurementUnit;
+            goalWeight.Text = currentUser.GoalWeight.ToString() + " " + currentUser.MeasurementUnit;
 
             string dateStr = DateTime.Today.Date.ToShortDateString();
             date.Text = dateStr;
